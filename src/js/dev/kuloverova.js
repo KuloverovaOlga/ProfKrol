@@ -21,7 +21,6 @@ document.addEventListener('DOMContentLoaded', () => {
   try {
     dropdown();
   } catch {}
-  
 });
 
 function phoneMask() {
@@ -35,7 +34,7 @@ function dropdown() {
   dropdowns.forEach((dropdown) => {
     const dropdownLink = dropdown.querySelector('.header__nav-item-link-wrapper');
     const dropdownInner = dropdown.querySelector('.header__dropdown-inner');
-
+    console.log(dropdownLink);
     $(dropdownInner).hide();
 
     function dropdownClick() {
@@ -62,20 +61,21 @@ function dropdown() {
   const headerInner = document.querySelector('.header__inner');
   const closeBtn = document.querySelector('.header__logo-close-btn');
 
+
+
   burger.addEventListener('click', () => {
+    console.log('123');
     if (!burger.classList.contains('active')) {
       burger.classList.add('active');
       headerInner.classList.add('active');
       document.body.style.overflow = 'hidden';
-     
-    } 
+    }
   });
   closeBtn.addEventListener('click', () => {
     if (burger.classList.contains('active')) {
       headerInner.classList.remove('active');
       burger.classList.remove('active');
       document.body.style.overflow = '';
-     
     }
   });
 
