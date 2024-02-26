@@ -21,6 +21,9 @@ document.addEventListener('DOMContentLoaded', () => {
   try {
     dropdown();
   } catch {}
+  try {
+    heroSwiper();
+  } catch {}
 });
 
 function phoneMask() {
@@ -61,8 +64,6 @@ function dropdown() {
   const headerInner = document.querySelector('.header__inner');
   const closeBtn = document.querySelector('.header__logo-close-btn');
 
-
-
   burger.addEventListener('click', () => {
     console.log('123');
     if (!burger.classList.contains('active')) {
@@ -85,5 +86,26 @@ function dropdown() {
       burger.classList.remove('active');
       document.body.style.overflow = '';
     }
+  });
+}
+
+function heroSwiper() {
+  const swiperOne = new Swiper('.main-hero__swiper', {
+    slidesPerView: 1,
+    effect: 'fade',
+    allowTouchMove: false,
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: true
+    },
+    loop: true,
+    fadeEffect: {
+      crossFade: true
+    },
+    speed: 1000,
+    navigation: {
+      nextEl: '.main-hero__swiper-btn--next',
+      prevEl: '.main-hero__swiper-btn--prev'
+    },
   });
 }
