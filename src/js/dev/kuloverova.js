@@ -37,7 +37,7 @@ function dropdown() {
   dropdowns.forEach((dropdown) => {
     const dropdownLink = dropdown.querySelector('.header__nav-item-link-wrapper');
     const dropdownInner = dropdown.querySelector('.header__dropdown-inner');
-    console.log(dropdownLink);
+  
     $(dropdownInner).hide();
 
     function dropdownClick() {
@@ -65,7 +65,6 @@ function dropdown() {
   const closeBtn = document.querySelector('.header__logo-close-btn');
 
   burger.addEventListener('click', () => {
-    console.log('123');
     if (!burger.classList.contains('active')) {
       burger.classList.add('active');
       headerInner.classList.add('active');
@@ -93,7 +92,7 @@ function heroSwiper() {
   const swiperOne = new Swiper('.main-hero__swiper', {
     slidesPerView: 1,
     effect: 'fade',
-    allowTouchMove: false,
+
     autoplay: {
       delay: 3000,
       disableOnInteraction: true
@@ -107,5 +106,11 @@ function heroSwiper() {
       nextEl: '.main-hero__swiper-btn--next',
       prevEl: '.main-hero__swiper-btn--prev'
     },
+
+    breakpoints: {
+      768: {
+        allowTouchMove: false
+      }
+    }
   });
 }
