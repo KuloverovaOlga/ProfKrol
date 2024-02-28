@@ -35,4 +35,13 @@
       object-fit: cover;
     }
   }
+  @include small-tablet {
+ width: 8rem;
+ height: 8rem;
+ & .swiper-button-svg-box {
+  width: 4rem;
+  height: 4rem;
+
+}
+  }
 }

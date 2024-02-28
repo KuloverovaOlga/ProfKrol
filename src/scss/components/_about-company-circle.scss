@@ -22,4 +22,13 @@
       object-fit: cover;
     }
   }
+
+  @include small-tablet {
+    width: 16rem;
+    height: 16rem;
+    &__svg-box {
+      width: 16rem;
+      height: 16rem;
+    }
+  }
 }
