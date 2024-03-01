@@ -66,7 +66,6 @@
 
   @include small-tablet {
     color: #a64c4c;
-
   }
 }
 
@@ -145,6 +144,7 @@
 
     @media (max-width: 48em) {
       border-radius: 1.6rem;
+   
     }
   }
   &_list {
@@ -156,7 +156,7 @@
     padding: 0.6rem 0;
     @media (max-width: 48em) {
       max-height: 32.8rem;
-      padding:  0;
+      padding: 0;
     }
 
     &::-webkit-scrollbar {
@@ -185,12 +185,10 @@
     cursor: pointer;
     padding: 1.2rem 2rem;
     &_name {
-
     }
     @media (max-width: 48em) {
       padding: 2rem 2.4rem;
       &_name {
-      
         font-size: 2.8rem;
       }
     }

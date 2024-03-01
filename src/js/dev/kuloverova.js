@@ -24,6 +24,12 @@ document.addEventListener('DOMContentLoaded', () => {
   try {
     heroSwiper();
   } catch {}
+  try {
+    newsTabs();
+  } catch {}
+  try {
+    detNewsSwiper();
+  } catch {}
 });
 
 function phoneMask() {
@@ -37,7 +43,7 @@ function dropdown() {
   dropdowns.forEach((dropdown) => {
     const dropdownLink = dropdown.querySelector('.header__nav-item-link-wrapper');
     const dropdownInner = dropdown.querySelector('.header__dropdown-inner');
-  
+
     $(dropdownInner).hide();
 
     function dropdownClick() {
@@ -111,6 +117,29 @@ function heroSwiper() {
       768: {
         allowTouchMove: false
       }
+    }
+  });
+}
+
+function newsTabs() {
+  const tabs = document.querySelectorAll('.news__tabs-item');
+  tabs.forEach((tab) => {
+    tab.addEventListener('click', () => {
+      tabs.forEach((tab) => {
+        tab.classList.remove('active');
+      });
+      tab.classList.add('active');
+    });
+  });
+}
+
+function detNewsSwiper() {
+  const swiperOne = new Swiper('.det-news__swiper', {
+    slidesPerView: 1,
+    loop: true,
+    navigation: {
+      nextEl: '.det-news__swiper-btn--next',
+      prevEl: '.det-news__swiper-btn--prev'
     }
   });
 }
