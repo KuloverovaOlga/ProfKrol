@@ -10,6 +10,8 @@ window.addEventListener('DOMContentLoaded', () => {
   if (document.querySelector('.production') && window.screen.width <= 768) {
     productionTabsMobile();
   }
+
+  document.querySelector('.contacts__accordion') && contactsAccordion();
 });
 
 const productionTabsDesktop = () => {
@@ -95,6 +97,23 @@ const productionTabsMobile = () => {
 
       targetParent.classList.add('active');
       targetParent.style.maxHeight = `${targetParent.scrollHeight}px`;
+    }
+  });
+};
+
+const contactsAccordion = () => {
+  const accordion = document.querySelector('.contacts__accordion'),
+    initialHeight = accordion.querySelector('.contacts__accordion-title').clientHeight;
+
+  accordion.addEventListener('click', (e) => {
+    let target = e.target;
+
+    if (target.classList.contains('contacts__accordion-head')) {
+      accordion.classList.toggle('active');
+
+      accordion.classList.contains('active')
+        ? (accordion.style.maxHeight = `${accordion.scrollHeight}px`)
+        : (accordion.style.maxHeight = `${initialHeight}px`);
     }
   });
 };

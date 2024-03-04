@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://api-maps.yandex.ru/v3/?apikey=4d7b8985-4ebf-4fde-8884-668550d59df1&lang=ru_RU"></script>
+    <title>Главная</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header header--main">
+        <include src="./components/_header.html"></include>
+      </header>
+      <include src="./components/_popup.html"></include>
+      <main>
+        <section class="nav-box">
+          <div class="container">
+            <nav class="nav-box__list-wrap title-h5">
+              <ul class="nav-box__list">
+                <li class="nav-box__link txt16"><a href="#">Главная</a></li>
+                <li class="nav-box__link txt16"><a href="#">Контакты</a></li>
+              </ul>
+            </nav>
+          </div>
+        </section>
+        <section class="contacts">
+          <div class="contacts__container container">
+            <div class="contacts__title tl1">Контакты</div>
+            <div class="contacts__map-container">
+              <div class="contacts__map" id="map"></div>
+              <div class="contacts__map-info">
+                <div class="contacts__map-title tl2">Контакты организации</div>
+                <div class="contacts__map-contact">
+                  <div class="contacts__map-contact--title txt18 txt18_bold">Адрес</div>
+                  <div class="contacts__map-contact--text txt16">
+                    Моск.область, г. Красково, 2-й Осоавиахимовский проезд, 12
+                  </div>
+                </div>
+                <div class="contacts__map-contact">
+                  <div class="contacts__map-contact--title txt18 txt18_bold">Сайт</div>
+                  <a href="#" class="contacts__map-contact--text txt16">profikrol.ru</a>
+                </div>
+                <div class="contacts__map-contact">
+                  <div class="contacts__map-contact--title txt18 txt18_bold">Телефон</div>
+                  <a href="#" class="contacts__map-contact--text txt16">+7 926 669-03-96</a>
+                  <a href="#" class="contacts__map-contact--text txt16">+7 926 669-03-96</a>
+                  <a href="#" class="contacts__map-contact--text txt16">+7 926 669-03-96</a>
+                </div>
+                <div class="contacts__map-contact">
+                  <div class="contacts__map-contact--title txt18 txt18_bold">Почта</div>
+                  <a href="#" class="contacts__map-contact--text txt16">msk@profikrol.ru</a>
+                </div>
+                <div class="contacts__map-contact">
+                  <div class="contacts__map-contact--title txt18 txt18_bold">Время работы</div>
+                  <div class="contacts__map-contact--text txt16">10:00 – 20:00</div>
+                </div>
+              </div>
+            </div>
+            <div class="contacts__bottom">
+              <div class="contacts__accordion">
+                <div class="contacts__accordion-head">
+                  <div class="contacts__accordion-title tl2">Контакты сотрудников организации</div>
+                  <div class="contacts__accordion-arrow">
+                    <svg
+                      width="32"
+                      height="33"
+                      viewBox="0 0 32 33"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M6.66699 21.8333L16.0003 12.5L25.3337 21.8333"
+                        stroke="#240403"
+                        stroke-width="1.3"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </div>
+                </div>
+                <div class="contacts__accordion-body">
+                  <div class="contacts__accordion-column">
+                    <div class="contacts__accordion-post txt18 txt18_bold">Директор</div>
+                    <div class="contacts__accordion-name txt18">Одинцов Василий Петрович</div>
+                    <div class="contacts__accordion-contact txt16">
+                      <div>Моск.область, г. Красково, 2-й Осоавиахимовский проезд, 12 (по МСК)</div>
+                    </div>
+                    <div class="contacts__accordion-contact txt16">
+                      <a href="#">+7 926 669-03-96</a>
+                    </div>
+                    <div class="contacts__accordion-contact txt16">
+                      <a href="#">msk@profikrol.ru</a>
+                    </div>
+                  </div>
+                  <div class="contacts__accordion-column">
+                    <div class="contacts__accordion-post txt18 txt18_bold">Коммерческий директор</div>
+                    <div class="contacts__accordion-name txt18">Бондаренко Валерий Викторович</div>
+                    <div class="contacts__accordion-contact txt16">
+                      <div>г. Казань, ул.Февральская, д.23 (по МСК)</div>
+                    </div>
+                    <div class="contacts__accordion-contact txt16">
+                      <a href="#">+7 926 669-03-96</a>
+                    </div>
+                    <div class="contacts__accordion-contact txt16">
+                      <a href="#">bondarenko@profikrol.ru</a>
+                    </div>
+                  </div>
+                  <div class="contacts__accordion-column">
+                    <div class="contacts__accordion-post txt18 txt18_bold">Отдел продаж</div>
+                    <div class="contacts__accordion-name txt18">Бойко Светлана Леонидовна</div>
+                    <div class="contacts__accordion-contact txt16">
+                      <div>г. Орск, ул.Февральская, д.23 (+2 часа по МСК)</div>
+                    </div>
+                    <div class="contacts__accordion-contact txt16">
+                      <a href="#">+ 7 965 356-66-23</a>
+                    </div>
+                    <div class="contacts__accordion-contact txt16">
+                      <a href="#">s.boyko@profikrol.ru</a>
+                    </div>
+                  </div>
+                  <div class="contacts__accordion-column">
+                    <div class="contacts__accordion-post txt18 txt18_bold">Главный бухгалтер</div>
+                    <div class="contacts__accordion-name txt18">Одинцов Василий Петрович</div>
+                    <div class="contacts__accordion-contact txt16">
+                      <div>г. Казань, ул.Февральская, д.23 (по МСК)</div>
+                    </div>
+                    <div class="contacts__accordion-contact txt16">
+                      <a href="#">+7 926 669-03-96</a>
+                    </div>
+                    <div class="contacts__accordion-contact txt16">
+                      <a href="#">msk@profikrol.ru</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+      <include src="./components/_footer.html"></include>
+    </div>
+    <script>
+      initMap();
+
+      async function initMap() {
+        // Промис `ymaps3.ready` будет зарезолвлен, когда загрузятся все компоненты основного модуля API
+        await ymaps3.ready;
+
+        const { YMap, YMapDefaultSchemeLayer, YMapDefaultFeaturesLayer, YMapMarker } = ymaps3;
+
+        // Иницилиазируем карту
+        const map = new YMap(
+          // Передаём ссылку на HTMLElement контейнера
+          document.getElementById('map'),
+
+          // Передаём параметры инициализации карты
+          {
+            location: {
+              // Координаты центра карты
+              center: [42.30156997392636, 54.579445796926024],
+
+              // Уровень масштабирования
+              zoom: 6
+            }
+          }
+        );
+
+        // Добавляем слой для отображения схематической карты
+        map.addChild(new YMapDefaultSchemeLayer());
+        map.addChild(new YMapDefaultFeaturesLayer());
+
+        const markerProps = [
+          { coord: [40.620661770801355, 56.59492428076209] },
+          { coord: [36.51441461331457, 55.06528719047676] }
+        ];
+
+        markerProps.forEach((obj) => {
+          const marker = document.createElement('div');
+          marker.innerHTML = `
+            <div class="contacts__map-marker--icon">
+                    <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle opacity="0.5" cx="30" cy="30" r="30" fill="#6AA64C"/>
+                    <circle cx="30" cy="30" r="10" fill="white"/>
+                    <circle cx="30" cy="30" r="4" fill="#6AA64C"/>
+                </svg>
+            <div>
+        `;
+
+          // <div class="contacts__map-marker--baloon">
+          //         <div class="contacts__map-marker--img">
+          //             <img src=${obj.imgSrc} alt=""/>
+          //         </div>
+          //         <div class="contacts__map-marker--descr">
+          //             <div class="contacts__map-marker--title txt18 txt18_bold"></div>
+          //             <div class="contacts__map-marker--text"></div>
+          //         </div>
+          //     </div>
+
+          marker.className = 'contacts__map-marker';
+
+          map.addChild(new YMapMarker({ coordinates: obj.coord }, marker));
+        });
+      }
+    </script>
+  </body>
+</html>
