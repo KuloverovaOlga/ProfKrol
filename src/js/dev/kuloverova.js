@@ -30,6 +30,15 @@ document.addEventListener('DOMContentLoaded', () => {
   try {
     detNewsSwiper();
   } catch {}
+  try {
+    newsMainSwiper();
+  } catch {}
+  try {
+    supervisorSwiper();
+  } catch {}
+  try {
+    cooperationSwiper();
+  } catch {}
 });
 
 function phoneMask() {
@@ -136,10 +145,70 @@ function newsTabs() {
 function detNewsSwiper() {
   const swiperOne = new Swiper('.det-news__swiper', {
     slidesPerView: 1,
+    spaceBetween: rem(2),
     loop: true,
     navigation: {
       nextEl: '.det-news__swiper-btn--next',
       prevEl: '.det-news__swiper-btn--prev'
+    }
+  });
+}
+
+function newsMainSwiper() {
+  const swiperOne = new Swiper('.news-main__swiper', {
+    slidesPerView: 1,
+    spaceBetween: rem(2),
+    loop: true,
+    navigation: {
+      nextEl: '.news-main__swiper-btn--next',
+      prevEl: '.news-main__swiper-btn--prev'
+    },
+    breakpoints: {
+      768: {
+        slidesPerView: 4
+      }
+    }
+  });
+}
+
+function supervisorSwiper() {
+  const swiperOne = new Swiper('.supervisor__swiper', {
+    slidesPerView: 1,
+    spaceBetween: rem(2),
+    loop: true,
+    navigation: {
+      nextEl: '.supervisor__swiper-btn--next',
+      prevEl: '.supervisor__swiper-btn--prev'
+    },
+    breakpoints: {
+      768: {
+        slidesPerView: 3
+      }
+    }
+  });
+}
+
+function cooperationSwiper() {
+  const sliders = document.querySelectorAll('.cooperation__swiper-slide');
+  let rows = Math.ceil(sliders.length / 2);
+  const swiper = new Swiper('.cooperation__swiper', {
+    slidesPerView: 1,
+    spaceBetween: rem(2),
+    grid: {
+      rows: 1
+    },
+    navigation: {
+      nextEl: '.cooperation__swiper-btn--next',
+      prevEl: '.cooperation__swiper-btn--prev'
+    },
+    breakpoints: {
+      769: {
+        slidesPerView: 4,
+        spaceBetween: 0,
+        grid: {
+          rows: rows
+        }
+      }
     }
   });
 }
