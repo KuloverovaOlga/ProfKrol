@@ -22,12 +22,15 @@ const productionTabsDesktop = () => {
     images = imagesContainer.querySelectorAll('.production__images-item'),
     initialTabHeight = tabs[0].clientHeight;
 
+    
+
   let isBlockInit = false;
 
   if (!isBlockInit) {
     tabs.forEach((tab) => {
       if (tab.classList.contains('active')) {
         tab.style.maxHeight = `${tab.scrollHeight}px`;
+
       }
     });
 

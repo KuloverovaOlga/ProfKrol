@@ -3,6 +3,8 @@ import form from '../utils/form';
 import 'inputmask';
 import Swiper from 'swiper/bundle';
 import 'swiper/css/bundle';
+import { Fancybox } from '@fancyapps/ui';
+import '@fancyapps/ui/dist/fancybox/fancybox.css';
 
 export const modules = {};
 window.$ = window.jQuery = require('jquery');
@@ -38,6 +40,18 @@ document.addEventListener('DOMContentLoaded', () => {
   } catch {}
   try {
     cooperationSwiper();
+  } catch {}
+  try {
+    ourPartnersSwiper();
+  } catch {}
+  try {
+    certificates();
+  } catch {}
+  try {
+    showMore();
+  } catch {}
+  try {
+    dishesSwiper();
   } catch {}
 });
 
@@ -208,6 +222,149 @@ function cooperationSwiper() {
         grid: {
           rows: rows
         }
+      }
+    }
+  });
+}
+
+function ourPartnersSwiper() {
+  const swiper = new Swiper('.our-partners__swiper', {
+    slidesPerView: 'auto',
+    spaceBetween: 0,
+    slidesPerGroup: 1,
+    allowTouchMove: true,
+    loop: true,
+    grid: {
+      rows: 2
+    },
+    navigation: {
+      nextEl: '.our-partners__swiper-btn--next',
+      prevEl: '.our-partners__swiper-btn--prev'
+    },
+    breakpoints: {
+      769: {
+        slidesPerView: 'auto',
+        spaceBetween: 0,
+        slidesPerGroup: 1,
+        loop: false,
+        allowTouchMove: false,
+        grid: {
+          rows: 2
+        }
+      }
+    }
+  });
+}
+
+function certificates() {
+  Fancybox.bind('[data-fancybox]', {
+    idle: false,
+    Thumbs: false,
+    Carousel: {
+      transition: 'slide'
+    },
+    Toolbar: {
+      display: {
+        left: [],
+        middle: [],
+        right: []
+      }
+    },
+    on: {
+      init: function () {
+        $('.fancybox-bg').fadeIn();
+      },
+      close: function () {
+        $('.fancybox-bg').fadeOut();
+      }
+    }
+  });
+  $('.fancybox-bg').on('click', function () {
+    Fancybox.close();
+  });
+
+  const swiperOne = new Swiper('.certificates__swiper', {
+    slidesPerView: 1,
+    spaceBetween: rem(2),
+    loop: true,
+    navigation: {
+      nextEl: '.certificates__swiper-btn--next',
+      prevEl: '.certificates__swiper-btn--prev'
+    },
+    breakpoints: {
+      768: {
+        slidesPerView: 3
+      }
+    }
+  });
+}
+
+function showMore() {
+  const elem = document.querySelector('.devotion__text-box');
+
+  let size = window.innerWidth > 768 ? 1120 : 512;
+  let text = elem.innerHTML;
+
+  window.addEventListener('resize', () => {
+    size = window.innerWidth > 768 ? 1120 : 512;
+    if (elem.hasAttribute('data-short')) {
+      text_crop();
+    }
+  });
+
+  function maxHeight() {
+    elem.style.maxHeight = `${elem.scrollHeight}px`;
+  }
+
+  function text_crop() {
+    elem.setAttribute('data-fulltext', text);
+
+    if (text.length > size) {
+      const text2 = text.slice(0, size - 10);
+      elem.innerHTML = text2 + '...';
+      elem.setAttribute('data-short', true);
+      elem.style.maxHeight = window.innerWidth > 768 ? '42.2rem' : '44.8rem';
+    }
+  }
+
+  function expandText() {
+    const fullText = elem.getAttribute('data-fulltext');
+    if (elem.hasAttribute('data-short')) {
+      elem.innerHTML = fullText;
+      elem.style.maxHeight = 'auto';
+      elem.removeAttribute('data-short');
+      maxHeight();
+      elem.parentElement.classList.add('isActive');
+      window.addEventListener('resize', maxHeight);
+    } else {
+      window.removeEventListener('resize', maxHeight);
+      elem.style.maxHeight = window.innerWidth > 768 ? '42.2rem' : '44.8rem';
+      elem.parentElement.classList.remove('isActive');
+      setTimeout(() => {
+        text_crop();
+      }, 300);
+    }
+  }
+
+  text_crop();
+  document.querySelectorAll('.devotion__btn').forEach((item) => item.addEventListener('click', expandText));
+}
+
+function dishesSwiper() {
+  const swiperOne = new Swiper('.dishes__swiper', {
+    slidesPerView: 1,
+    spaceBetween: rem(2),
+    grabCursor: true,
+    loop: true,
+    navigation: {
+      nextEl: '.dishes__swiper-btn--next',
+      prevEl: '.dishes__swiper-btn--prev'
+    },
+    breakpoints: {
+      768: {
+        slidesPerView: 2,
+        slidesPerGroup: 1
+
       }
     }
   });
