@@ -7,7 +7,7 @@
           Наши высококачественные продукты из кроличьего мяса помогут вам создать вкусные и питательные блюда.
         </div>
       </div>
-      <div class="catalog-banner__left-middle">
+      <div class="catalog-banner__left-middle desktop">
         <ul class="catalog-banner__left-icons">
           <li class="catalog-banner__left-icon">
             <div>
@@ -222,7 +222,11 @@
         </li>
       </ul>
       <div class="catalog-banner__right-img">
-        <img src="./assets/images/catalog-banner-img.webp" alt="" />
+        <picture>
+          <source media="(min-width: 48em)" srcset="./assets/images/catalog-banner-img.webp" />
+          <source media="(max-width: 48em)" srcset="./assets/images/catalog-banner-img-mobile.webp" />
+          <img src="./assets/images/catalog-banner-img.webp" alt="" />
+        </picture>
       </div>
     </div>
   </div>
