@@ -11,7 +11,26 @@ window.addEventListener('DOMContentLoaded', () => {
     productionTabsMobile();
   }
 
-  document.querySelector('.contacts__accordion') && contactsAccordion();
+  document.querySelector('.contacts__accordion') && window.screen.width > 768 && contactsAccordion();
+
+  if (document.querySelector('.contacts__employees-modal') && window.screen.width <= 768) {
+    const modals = [
+        document.querySelector('.contacts__employees-modal'),
+        document.querySelector('.contacts__company-modal')
+      ],
+      openBtns = [
+        document.querySelector('.contacts__btn-company--open'),
+        document.querySelector('.contacts__btn-employees--open')
+      ],
+      closeBtns = [
+        document.querySelector('.contacts__employees-modal--close'),
+        document.querySelector('.contacts__company-modal--close')
+      ];
+
+    modals.forEach((modal, i) => {
+      contactsMobilePopup(modal, openBtns[i], closeBtns[i]);
+    });
+  }
 });
 
 const productionTabsDesktop = () => {
@@ -22,15 +41,12 @@ const productionTabsDesktop = () => {
     images = imagesContainer.querySelectorAll('.production__images-item'),
     initialTabHeight = tabs[0].clientHeight;
 
-    
-
   let isBlockInit = false;
 
   if (!isBlockInit) {
     tabs.forEach((tab) => {
       if (tab.classList.contains('active')) {
         tab.style.maxHeight = `${tab.scrollHeight}px`;
-
       }
     });
 
@@ -118,6 +134,17 @@ const contactsAccordion = () => {
         ? (accordion.style.maxHeight = `${accordion.scrollHeight}px`)
         : (accordion.style.maxHeight = `${initialHeight}px`);
     }
+  });
+};
+
+const contactsMobilePopup = (modal, openBtn, closeBtn) => {
+  openBtn.addEventListener('click', () => {
+    modal.classList.add('active');
+  });
+
+  closeBtn.addEventListener('click', () => {
+    console.log('1');
+    modal.classList.remove('active');
   });
 };
 
