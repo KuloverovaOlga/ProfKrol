@@ -188,4 +188,22 @@ const Swipers = () => {
       nextEl: '.product__swiper-btn--next'
     }
   });
+
+  const similarProductsSwiper = new Swiper('.similar-products__swiper', {
+    slidesPerGroup: 1,
+    slidesPerView: 1,
+    spaceBetween: 16,
+
+    breakpoints: {
+      768: {
+        slidesPerView: 4,
+        spaceBetween: 20
+      }
+    },
+
+    navigation: {
+      prevEl: '.similar-products__swiper-btn--prev',
+      nextEl: '.similar-products__swiper-btn--next'
+    }
+  });
 };
