@@ -10,9 +10,9 @@
       }
     }
     & .header__contact-wrapper {
-      display: none;
+      margin-left: 4rem;
       @include small-tablet {
-        display: flex;
+        margin-left: 0;
       }
     }
     & .header__inner {
@@ -394,22 +394,20 @@
   // .header__contact-desk
 
   &__contact-desk {
-    display: flex;
-    align-items: center;
-    gap: 0.4rem;
-  }
-
-  // .header__contact-desk-text
-
-  &__contact-desk-text {
     border-radius: 1rem;
-    padding: 1.8rem 2.4rem;
+    display: flex;
+    gap: 2.4rem;
+    align-items: center;
     background-color: $white;
     color: $black;
     transition: background-color 0.3s, color 0.3s;
+    padding: 1.3rem 2.4rem 1.3rem 1.3rem;
     &:hover {
       background-color: $black;
       color: $white;
+      & svg path {
+        fill: $white;
+      }
     }
     @include small-tablet {
       border-radius: 0;
@@ -422,25 +420,48 @@
     }
   }
 
+  // .header__contact-desk-text
+
+  &__contact-desk-text {
+    // border-radius: 1rem;
+    // padding: 1.8rem 2.4rem;
+    // background-color: $white;
+    // color: $black;
+    // transition: background-color 0.3s, color 0.3s;
+    // &:hover {
+    //   background-color: $black;
+    //   color: $white;
+    // }
+    // @include small-tablet {
+    //   border-radius: 0;
+    //   background-color: transparent;
+    //   padding: 0;
+    //   &:hover {
+    //     background-color: transparent;
+    //     color: $black;
+    //   }
+    // }
+  }
+
   // .header__contact-desk-svg-wrapper
 
   &__contact-desk-svg-wrapper {
-    border-radius: 1rem;
-    width: 5.8rem;
-    height: 5.8rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: $white;
-    color: $black;
-    transition: background-color 0.3s, color 0.3s;
-    &:hover {
-      background-color: $black;
-      color: $white;
-      & svg path {
-        fill: $white;
-      }
-    }
+    // border-radius: 1rem;
+    // width: 5.8rem;
+    // height: 5.8rem;
+    // display: flex;
+    // align-items: center;
+    // justify-content: center;
+    // background-color: $white;
+    // color: $black;
+    // transition: background-color 0.3s, color 0.3s;
+    // &:hover {
+    //   background-color: $black;
+    //   color: $white;
+    //   & svg path {
+    //     fill: $white;
+    //   }
+    // }
   }
   // .header__contact-desk-svg-box
 
