@@ -1,5 +1,9 @@
 .about-meat {
   &__swiper {
+    &.swiper {
+      overflow: initial;
+    }
+
     &-navigation {
       display: none;
     }
@@ -34,7 +38,7 @@
       }
 
       .about-meat__text {
-        max-width: 22rem;
+        max-width: 35rem;
       }
 
       .about-meat__img {
@@ -186,6 +190,11 @@
   }
 
   @media (max-width: 48em) {
+    &__swiper {
+      &.swiper {
+        overflow: hidden;
+      }
+    }
     &__card {
       flex: 0 0 auto;
       min-height: 88.6rem;
@@ -209,7 +218,7 @@
         }
 
         .about-meat__text {
-          max-width: 38rem;
+          max-width: 60rem;
         }
 
         .about-meat__img {
@@ -255,6 +264,7 @@
       &-big {
         font-size: 17.8rem;
         line-height: 21.4rem;
+        margin-bottom: 5rem;
       }
     }
 
