@@ -329,3 +329,26 @@ body::before {
     }
   }
 }
+.popup--success {
+  .popup__body {
+    padding: 6rem;
+    padding-right: 11.2rem;
+    width: 92.8rem;
+    flex-direction: column;
+
+    @include small-tablet {
+      padding: 9.6rem 3.2rem 8rem;
+      width: 100%;
+    }
+  }
+  .popup__body-content-box {
+    margin-bottom: 4rem;
+    &-title {
+      margin-bottom: 4rem;
+    }
+  }
+  .button-green {
+    width: fit-content;
+    cursor: pointer;
+  }
+}

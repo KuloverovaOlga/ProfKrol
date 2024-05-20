@@ -46,9 +46,9 @@
     margin-top: auto;
 
     &-item {
-      &:nth-child(odd) {
-        flex: 0 0 20rem;
-      }
+      // &:nth-child(odd) {
+      //   flex: 0 0 20rem;
+      // }
     }
   }
 
@@ -167,12 +167,29 @@
 
       .partner__text {
         max-width: none;
-        margin-bottom: 12.2rem;
+        padding-bottom: 6.4rem;
+        margin-bottom: 6.4rem;
+        position: relative;
+
+        &::after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: 1px;
+          background: rgb(203, 204, 192);
+          background: -moz-radial-gradient(circle, rgba(203, 204, 192, 1) 50%, rgba(203, 204, 202, 0) 100%);
+          background: -webkit-radial-gradient(circle, rgba(203, 204, 192, 1) 50%, rgba(203, 204, 202, 0) 100%);
+          background: radial-gradient(circle, rgba(203, 204, 192, 1) 50%, rgba(203, 204, 202, 0) 100%);
+          filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#cbccc0",endColorstr="#cbccca",GradientType=1);
+        }
       }
 
       &::after {
-        bottom: 42.4rem;
-        width: 100%;
+        display: none;
+        // bottom: 42.4rem;
+        // width: 100%;
       }
     }
 
