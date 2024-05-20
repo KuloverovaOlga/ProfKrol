@@ -171,6 +171,11 @@
 
       &-slide {
         margin-bottom: 4rem;
+
+        .swiper-slide {
+          display: flex;
+          flex-direction: column;
+        }
       }
     }
   }

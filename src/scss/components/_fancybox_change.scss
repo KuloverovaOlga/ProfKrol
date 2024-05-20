@@ -42,7 +42,8 @@
   --f-button-svg-height: 1.6rem !important;
   @include small-tablet {
     right: 0 !important;
-    top: -13rem !important;
+    top: 10rem !important;
+    // top: -13rem !important;
     --f-button-width: 9.6rem !important;
     --f-button-height: 9.6rem !important;
     --f-button-border-radius: 2rem !important;
